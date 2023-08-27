@@ -1,0 +1,45 @@
+<!-- <p>account works!</p>
+<a href="/hello-world">Go to hello world</a> -->
+
+
+<form (submit)="submit2()" [formGroup]="accountProfile">
+    <div>
+        Firstname: 
+        <input type="text" formControlName="firstname">
+        <div style="color:red" 
+        *ngIf="firstname?.hasError('required')">โปรดกรอกข้อมูล</div>
+        <div style="color:red" 
+        *ngIf="firstname?.hasError('iNotMoreThanten')">โปรดกรอกตัวเลขมากกว่า 10</div>
+    </div>
+    <div>
+        Lastname:
+        <input type="text" formControlName="lastname">
+        <div style="color:red" 
+        *ngIf="lastname?.hasError('required')">โปรดกรอกข้อมูล</div>
+        
+    </div>
+    
+    <button type="submit">Submit</button>
+</form>
+
+{{accountProfile.value | json}}
+
+
+<!-- <form (submit)="submit()"> -->
+<!-- <div>
+    <h2>Template Form</h2>
+    <input type="text" [(ngModel)]="accountNumber" required>
+
+    {{accountNumber}}
+</div> -->
+<!-- <div style="margin-top: 30px;">
+    <h2>Reactive Form</h2>
+    <input type="text" [formControl]="accountNameControl">
+
+    {{accountNameControl.value}}
+    <div style="color:red" *ngIf="accountNameControl.hasError('required')">โปรดกรอกข้อมูล</div>
+</div>
+<button (click)="reset()">Reset</button>
+<button type="submit">Submit</button>
+</form> -->
+

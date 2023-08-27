@@ -1,0 +1,8 @@
+<p>apple works!</p>
+<input type="text" [(ngModel)]="apple" />
+
+<h1>
+    count: {{count}}
+</h1>
+
+<app-cat [cat]="apple" (catChange)="receiveEvent($event)"></app-cat>
